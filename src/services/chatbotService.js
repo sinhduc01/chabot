@@ -31,7 +31,7 @@ let callSendAPI = (sender_psid, response) => {
 let handleGetStarted = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            response = { "text": `Xin loi! Minh khong biet cau tra loi cua ban voi ${payload} ` }
+            let response = { "text": "Chao mung den voi page QBUIT!" }
             await callSendAPI(sender_psid, response);
             resolve('done');
         } catch (e) {

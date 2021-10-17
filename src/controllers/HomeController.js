@@ -134,10 +134,9 @@ async function handlePostback(sender_psid, received_postback) {
 
     case 'GET_STARTED':
       await chatbotService.handleGetStarted(sender_psid);
-      response = { "text": "Chao mung den voi page QBUIT!" }
       break;
     default:
-
+      response = { "text": `Xin loi! Minh khong biet cau tra loi cua ban voi ${payload} ` }
   }
   // Send the message to acknowledge the postback
   // callSendAPI(sender_psid, response);
