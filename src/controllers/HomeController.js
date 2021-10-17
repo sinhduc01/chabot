@@ -171,7 +171,7 @@ let setupProfile = async (req, res) => {
   // Construct the message body
   let request_body = {
     "get_started": { "payload": "GET_STARTED" },
-    "whitelisted_domains": ["https://chatbotbysd.herokuapp.com/"]
+    "whitelisted_domains": ["https://appchatbottest1.herokuapp.com/"]
   }
 
   // Send the HTTP request to the Messenger Platform
