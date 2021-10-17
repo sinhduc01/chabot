@@ -28,7 +28,7 @@ let callSendAPI = (sender_psid, response) => {
         }
     });
 }
-let handleGetStarted = () => {
+let handleGetStarted = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             response = { "text": `Xin loi! Minh khong biet cau tra loi cua ban voi ${payload} ` }
