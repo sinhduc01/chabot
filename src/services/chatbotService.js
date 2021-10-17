@@ -29,7 +29,7 @@ letcallSendAPI = (sender_psid, response) => {
     });
 }
 let handleGetStarted = () => {
-    return Promise(async (resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         try {
             response = { "text": `Xin loi! Minh khong biet cau tra loi cua ban voi ${payload} ` }
             await callSendAPI(sender_psid, response);
