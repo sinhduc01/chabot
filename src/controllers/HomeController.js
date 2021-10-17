@@ -116,7 +116,7 @@ function handleMessage(sender_psid, received_message) {
 }
 
 // Handles messaging_postbacks events
-async function handlePostback(sender_psid, received_postback) {
+function handlePostback(sender_psid, received_postback) {
   let response;
 
   // Get the payload for the postback
@@ -132,7 +132,6 @@ async function handlePostback(sender_psid, received_postback) {
       break;
 
     case 'GET_STARTED':
-      awai
       response = { "text": "Chao mung den voi page QBUIT!" }
       break;
     default:
