@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 
-letcallSendAPI = (response) => {
+letcallSendAPI = (sender_psid, response) => {
     // Construct the message body
     let request_body = {
         "recipient": {
@@ -32,7 +32,7 @@ let handleGetStarted = () => {
     return Promise(async (resolve, reject) => {
         try {
             response = { "text": `Xin loi! Minh khong biet cau tra loi cua ban voi ${payload} ` }
-            await callSendAPI(response);
+            await callSendAPI(sender_psid, response);
             resolve('done');
         } catch (e) {
             reject(e);
