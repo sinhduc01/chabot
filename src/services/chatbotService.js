@@ -49,13 +49,51 @@ let handleGetStarted = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
             let username = await getUserName(sender_psid);
-            let response = { "text": `Chao mung ban ${username} den voi page QBUIT!` }
-            await callSendAPI(sender_psid, response);
+            let response1 = { "text": `Chao mung ban ${username} den voi page QBUIT!` }
+
+            let responese2 = sendGetStartedTemplate();
+
+
+            //send text mess
+            await callSendAPI(sender_psid, response1);
+
+            //send generic template mess
+            await callSendAPI(sender_psid, response2);
+
             resolve('done');
         } catch (e) {
             reject(e);
         }
     })
+}
+
+let sendGetStartedTemplate = () => {
+    let response = {
+        "attachment": {
+            "type": "template",
+            "payload": {
+                "template_type": "generic",
+                "elements": [{
+                    "title": "Xin chao ban den voi QBUIT",
+                    "subtitle": "Duoi day la cac lua chon.",
+                    "image_url": attachment_url,
+                    "buttons": [
+                        {
+                            "type": "postback",
+                            "title": "Yes!",
+                            "payload": "yes",
+                        },
+                        {
+                            "type": "postback",
+                            "title": "No!",
+                            "payload": "no",
+                        }
+                    ],
+                }]
+            }
+        }
+    }
+    return response;
 }
 
 module.exports = {
