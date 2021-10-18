@@ -50,7 +50,7 @@ let getUserName = (sender_psid) => {
 let handleGetStarted = (sender_psid) => {
     return new Promise(async (resolve, reject) => {
         try {
-            let username = await getUserName(sender_psid);
+            let username = getUserName(sender_psid);
             let response = { "text": `Chao mung ban ${username} den voi page QBUIT!` }
             await callSendAPI(sender_psid, response);
             resolve('done');
